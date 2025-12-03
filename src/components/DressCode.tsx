@@ -46,7 +46,7 @@ export default function DressCode({
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
+        ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
       },
     },
   };
@@ -55,7 +55,7 @@ export default function DressCode({
     hover: {
       y: -5,
       scale: 1.05,
-      transition: { type: "spring", stiffness: 300 },
+      transition: { type: "spring" as const, stiffness: 300 },
     },
   };
 
