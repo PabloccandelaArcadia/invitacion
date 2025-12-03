@@ -65,7 +65,7 @@ export default function Historia({
       scale: 1,
       transition: {
         duration: 1,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };
@@ -77,7 +77,7 @@ export default function Historia({
       scaleX: 1,
       transition: {
         duration: 0.8,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
   };

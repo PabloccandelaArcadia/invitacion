@@ -92,7 +92,7 @@ export default function MusicPlayer({
         duration: 0.8,
         repeat: Infinity,
         delay: i * 0.1,
-        ease: "easeInOut",
+        ease: "easeInOut" as const,
       },
     }),
     paused: {
