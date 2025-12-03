@@ -112,22 +112,16 @@ export default function Countdown({
       {/* Caja con número */}
       <motion.div
         className="glass-strong w-16 h-16 md:w-20 md:h-20 flex items-center justify-center
-                   shadow-lg relative overflow-hidden"
+                   shadow-lg relative"
         whileHover={{ scale: 1.05 }}
       >
-        {/* Efecto de brillo */}
-        <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-transparent" />
-        
         {/* Número animado */}
-        <motion.span
-          key={value}
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ y: 0, opacity: 1 }}
+        <span
           className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl 
-                     font-bold text-[#d4af37] relative z-10"
+                     font-bold text-[#5e35b1]"
         >
           {isClient ? String(value).padStart(2, "0") : "00"}
-        </motion.span>
+        </span>
 
         {/* Decoración dorada */}
         <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r 
