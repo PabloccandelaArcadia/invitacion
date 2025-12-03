@@ -8,7 +8,7 @@ interface CountdownProps {
 }
 
 export default function Countdown({ 
-  targetDate = "2025-03-15T19:00:00" 
+  targetDate = "2025-12-20T20:00:00" 
 }: CountdownProps) {
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);

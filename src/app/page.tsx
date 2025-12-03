@@ -39,8 +39,8 @@ const CONFIG = {
   nombre: "Brisa Rivarola",
   
   // Fecha y hora del evento (formato: YYYY-MM-DDTHH:mm:ss)
-  fechaEvento: "2025-03-15T19:00:00",
-  fechaTexto: "Sábado 15 de Marzo, 2025",
+  fechaEvento: "2025-12-20T20:00:00",
+  fechaTexto: "Sábado 20 de Diciembre, 2025",
   hora: "19:00 hrs",
   
   // Frases
