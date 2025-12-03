@@ -159,8 +159,6 @@ export default function Countdown({
       id="countdown" 
       className="relative py-20 px-4 overflow-hidden"
     >
-      {/* Fondo con gradiente suave */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#f3e5f5]/40 via-[#fff8e1]/60 to-[#fce4ec]/40" />
 
       {/* Decoración circular de fondo */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
@@ -180,7 +178,7 @@ export default function Countdown({
             Cuenta Regresiva
           </p>
           <h2 className="font-[family-name:var(--font-great-vibes)] text-4xl md:text-5xl 
-                         text-[#4a3728]">
+                         text-[#5e35b1]">
             El gran día se acerca
           </h2>
         </motion.div>

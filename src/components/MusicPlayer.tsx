@@ -7,36 +7,49 @@ import { motion, AnimatePresence } from "framer-motion";
  * ═══════════════════════════════════════════════════════════════
  * 🎵 COMPONENTE MUSIC PLAYER
  * Reproductor de música de fondo con botón ON/OFF
- * Diseño minimalista y elegante
+ * Puede reproducirse automáticamente al cargar
  * ═══════════════════════════════════════════════════════════════
  */
 
 interface MusicPlayerProps {
   /** URL del archivo de audio (colocar en /public) */
   audioSrc?: string;
+  /** Si debe reproducirse automáticamente */
+  autoPlay?: boolean;
+  /** Volumen inicial (0 a 1) */
+  volume?: number;
 }
 
 export default function MusicPlayer({ 
-  audioSrc = "/music/background.mp3" 
+  audioSrc = "/music/cancion.mp3",
+  autoPlay = false,
+  volume = 0.15  // Volumen bajito por defecto (15%)
 }: MusicPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     // Crear elemento de audio
     audioRef.current = new Audio(audioSrc);
     audioRef.current.loop = true;
-    audioRef.current.volume = 0.3;
+    audioRef.current.volume = volume;
 
-    audioRef.current.addEventListener("canplaythrough", () => {
-      setIsLoaded(true);
-    });
-
-    audioRef.current.addEventListener("error", () => {
-      // Si no hay archivo de música, no mostrar error
-      console.log("Archivo de música no encontrado - función deshabilitada");
-    });
+    // Si autoPlay está activado, intentar reproducir
+    if (autoPlay) {
+      const playAudio = async () => {
+        try {
+          await audioRef.current?.play();
+          setIsPlaying(true);
+        } catch (error) {
+          // Si el navegador bloquea autoplay, no hacer nada
+          // El usuario puede activar manualmente con el botón
+          console.log("Autoplay bloqueado - usa el botón para activar música");
+        }
+      };
+      
+      // Pequeño delay para asegurar que el componente esté montado
+      setTimeout(playAudio, 500);
+    }
 
     return () => {
       if (audioRef.current) {
@@ -44,7 +57,7 @@ export default function MusicPlayer({
         audioRef.current = null;
       }
     };
-  }, [audioSrc]);
+  }, [audioSrc, autoPlay, volume]);
 
   const togglePlay = () => {
     if (!audioRef.current) return;
@@ -53,7 +66,6 @@ export default function MusicPlayer({
       audioRef.current.pause();
     } else {
       audioRef.current.play().catch(() => {
-        // Manejar error de autoplay bloqueado
         console.log("Reproducción bloqueada por el navegador");
       });
     }
@@ -66,7 +78,7 @@ export default function MusicPlayer({
     animate: { 
       scale: 1, 
       opacity: 1,
-      transition: { delay: 1, duration: 0.5 }
+      transition: { delay: 0.5, duration: 0.5 }
     },
     tap: { scale: 0.9 },
     hover: { scale: 1.1 },
@@ -141,7 +153,7 @@ export default function MusicPlayer({
         )}
       </AnimatePresence>
 
-      {/* Anillo de progreso/decorativo */}
+      {/* Anillo decorativo */}
       <motion.div
         className="absolute inset-0 rounded-full border-2 border-white/20"
         animate={isPlaying ? { rotate: 360 } : { rotate: 0 }}
@@ -150,4 +162,3 @@ export default function MusicPlayer({
     </motion.button>
   );
 }
-

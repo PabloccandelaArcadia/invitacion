@@ -97,13 +97,9 @@ export default function Hero({
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 py-12">
-      {/* Fondo decorativo con gradiente */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#fce4ec]/80 via-[#fff8e1]/60 to-[#f3e5f5]/80" />
-      
-      {/* Círculos decorativos de fondo */}
-      <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-[#f8bbd9]/20 blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-[#ce93d8]/20 blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-[#f5e6a3]/20 blur-3xl" />
+      {/* Círculos decorativos sutiles */}
+      <div className="absolute top-10 left-10 w-64 h-64 rounded-full bg-[#ce93d8]/10 blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-80 h-80 rounded-full bg-[#9575cd]/10 blur-3xl" />
 
       {/* Partículas brillantes */}
       <Sparkles count={25} />
@@ -115,17 +111,17 @@ export default function Hero({
         animate="visible"
         className="relative z-10 text-center max-w-lg mx-auto"
       >
-        {/* Corona o decoración superior */}
+        {/* Corona decorativa */}
         <motion.div
           variants={itemVariants}
           className="mb-4"
         >
           <svg
-            className="w-16 h-16 mx-auto text-[#d4af37]"
-            viewBox="0 0 64 64"
+            className="w-14 h-14 mx-auto text-[#d4af37]"
+            viewBox="0 0 24 24"
             fill="currentColor"
           >
-            <path d="M32 4L36 16L48 12L44 24L56 28L44 32L48 44L36 40L32 52L28 40L16 44L20 32L8 28L20 24L16 12L28 16L32 4Z" />
+            <path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z"/>
           </svg>
         </motion.div>
 
@@ -142,7 +138,7 @@ export default function Hero({
         <motion.h1
           variants={nombreVariants}
           className="font-[family-name:var(--font-great-vibes)] text-6xl md:text-8xl 
-                     text-[#4a3728] mb-4 leading-tight"
+                     text-[#5e35b1] mb-4 leading-tight"
         >
           {nombre}
         </motion.h1>
@@ -161,7 +157,7 @@ export default function Hero({
         <motion.p
           variants={itemVariants}
           className="font-[family-name:var(--font-cormorant)] text-lg md:text-xl 
-                     text-[#8b7355] italic mb-8 px-4"
+                     text-[#7e6b8a] italic mb-8 px-4"
         >
           "{frase}"
         </motion.p>
@@ -172,7 +168,7 @@ export default function Hero({
           className="mb-10"
         >
           <p className="font-[family-name:var(--font-montserrat)] text-base md:text-lg 
-                        text-[#4a3728] tracking-wider">
+                        text-[#4a3750] tracking-wider">
             {fecha}
           </p>
         </motion.div>
@@ -213,16 +209,16 @@ export default function Hero({
         </motion.div>
       </motion.div>
 
-      {/* Flores decorativas en las esquinas (opcional visual) */}
+      {/* Flores decorativas en las esquinas - VIOLETA */}
       <div className="absolute bottom-0 left-0 w-32 h-32 opacity-30">
-        <svg viewBox="0 0 100 100" className="w-full h-full text-[#f8bbd9]">
+        <svg viewBox="0 0 100 100" className="w-full h-full text-[#ce93d8]">
           <circle cx="20" cy="80" r="15" fill="currentColor" opacity="0.5" />
           <circle cx="35" cy="70" r="10" fill="currentColor" opacity="0.4" />
           <circle cx="10" cy="65" r="12" fill="currentColor" opacity="0.3" />
         </svg>
       </div>
       <div className="absolute bottom-0 right-0 w-32 h-32 opacity-30 transform scale-x-[-1]">
-        <svg viewBox="0 0 100 100" className="w-full h-full text-[#f8bbd9]">
+        <svg viewBox="0 0 100 100" className="w-full h-full text-[#ce93d8]">
           <circle cx="20" cy="80" r="15" fill="currentColor" opacity="0.5" />
           <circle cx="35" cy="70" r="10" fill="currentColor" opacity="0.4" />
           <circle cx="10" cy="65" r="12" fill="currentColor" opacity="0.3" />

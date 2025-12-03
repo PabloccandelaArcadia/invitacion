@@ -66,8 +66,6 @@ export default function Agradecimiento({
 
   return (
     <section className="relative py-24 px-4 overflow-hidden">
-      {/* Fondo con gradiente elegante - tonos rosados y violetas */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#fce4ec]/60 via-[#f3e5f5]/80 to-[#e1bee7]/90" />
 
       {/* Efecto de glow central */}
       <motion.div
@@ -116,7 +114,7 @@ export default function Agradecimiento({
         <motion.h2
           variants={itemVariants}
           className="font-[family-name:var(--font-great-vibes)] text-4xl md:text-6xl 
-                     text-[#4a3728] mb-6"
+                     text-[#5e35b1] mb-6"
         >
           ¡Te esperamos!
         </motion.h2>
@@ -125,7 +123,7 @@ export default function Agradecimiento({
         <motion.p
           variants={itemVariants}
           className="font-[family-name:var(--font-cormorant)] text-lg md:text-xl 
-                     text-[#4a3728] leading-relaxed mb-10 px-4"
+                     text-[#4a3750] leading-relaxed mb-10 px-4"
         >
           {mensaje}
         </motion.p>
@@ -228,18 +226,18 @@ export default function Agradecimiento({
         </motion.p>
       </motion.div>
 
-      {/* Decoraciones flotantes en las esquinas */}
+      {/* Decoraciones flotantes en las esquinas - VIOLETA */}
       <div className="absolute bottom-0 left-0 w-40 h-40 opacity-20 pointer-events-none">
         <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
-          <circle cx="20" cy="80" r="25" fill="#f8bbd9" />
-          <circle cx="45" cy="60" r="18" fill="#ce93d8" />
+          <circle cx="20" cy="80" r="25" fill="#9575cd" />
+          <circle cx="45" cy="60" r="18" fill="#7e57c2" />
           <circle cx="15" cy="50" r="15" fill="#d4af37" />
         </svg>
       </div>
       <div className="absolute bottom-0 right-0 w-40 h-40 opacity-20 pointer-events-none scale-x-[-1]">
         <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
-          <circle cx="20" cy="80" r="25" fill="#f8bbd9" />
-          <circle cx="45" cy="60" r="18" fill="#ce93d8" />
+          <circle cx="20" cy="80" r="25" fill="#9575cd" />
+          <circle cx="45" cy="60" r="18" fill="#7e57c2" />
           <circle cx="15" cy="50" r="15" fill="#d4af37" />
         </svg>
       </div>

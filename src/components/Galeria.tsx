@@ -76,12 +76,9 @@ export default function Galeria({
 
   return (
     <section className="relative py-20 px-4 overflow-hidden">
-      {/* Fondo */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#f3e5f5]/40 via-white/60 to-[#fce4ec]/40" />
-
-      {/* Decoraciones */}
-      <div className="absolute top-20 -left-20 w-72 h-72 rounded-full bg-[#ce93d8]/15 blur-3xl" />
-      <div className="absolute bottom-20 -right-20 w-64 h-64 rounded-full bg-[#f8bbd9]/20 blur-3xl" />
+      {/* Decoraciones sutiles */}
+      <div className="absolute top-20 -left-20 w-72 h-72 rounded-full bg-[#9575cd]/10 blur-3xl" />
+      <div className="absolute bottom-20 -right-20 w-64 h-64 rounded-full bg-[#ce93d8]/10 blur-3xl" />
 
       <motion.div
         variants={containerVariants}
@@ -97,7 +94,7 @@ export default function Galeria({
             Galería
           </p>
           <h2 className="font-[family-name:var(--font-great-vibes)] text-4xl md:text-5xl 
-                         text-[#4a3728]">
+                         text-[#5e35b1]">
             {titulo}
           </h2>
         </motion.div>
@@ -118,8 +115,8 @@ export default function Galeria({
                               : ""
                           }`}
             >
-              {/* Placeholder decorativo (reemplazar con imágenes reales) */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#fce4ec] via-[#f8bbd9] to-[#ce93d8]">
+              {/* Placeholder decorativo - VIOLETA */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#e1bee7] via-[#ce93d8] to-[#9575cd]">
                 {/* Patrón decorativo */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-white/30 text-6xl">✿</div>

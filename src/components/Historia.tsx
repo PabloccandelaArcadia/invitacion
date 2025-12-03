@@ -84,12 +84,9 @@ export default function Historia({
 
   return (
     <section className="relative py-20 px-4 overflow-hidden">
-      {/* Fondo con patrón sutil */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#fce4ec]/50 via-white/80 to-[#f3e5f5]/50" />
-      
       {/* Decoración de fondo - círculos suaves */}
-      <div className="absolute top-20 -left-20 w-72 h-72 rounded-full bg-[#f8bbd9]/20 blur-3xl" />
-      <div className="absolute bottom-20 -right-20 w-72 h-72 rounded-full bg-[#ce93d8]/15 blur-3xl" />
+      <div className="absolute top-20 -left-20 w-72 h-72 rounded-full bg-[#ce93d8]/10 blur-3xl" />
+      <div className="absolute bottom-20 -right-20 w-72 h-72 rounded-full bg-[#9575cd]/10 blur-3xl" />
 
       <motion.div
         variants={containerVariants}
@@ -126,7 +123,7 @@ export default function Historia({
         <motion.h2
           variants={revealVariants}
           className="text-center font-[family-name:var(--font-great-vibes)] text-4xl md:text-5xl 
-                     text-[#4a3728] mb-8"
+                     text-[#5e35b1] mb-8"
         >
           {titulo}
         </motion.h2>
@@ -144,7 +141,7 @@ export default function Historia({
           className="glass p-6 md:p-8 mb-6"
         >
           <p className="font-[family-name:var(--font-cormorant)] text-lg md:text-xl 
-                        text-[#4a3728] leading-relaxed text-center">
+                        text-[#4a3750] leading-relaxed text-center">
             {mensaje}
           </p>
         </motion.div>
@@ -153,7 +150,7 @@ export default function Historia({
         <motion.p
           variants={revealVariants}
           className="font-[family-name:var(--font-cormorant)] text-base md:text-lg 
-                     text-[#8b7355] italic text-center leading-relaxed px-4"
+                     text-[#7e6b8a] italic text-center leading-relaxed px-4"
         >
           {mensajeSecundario}
         </motion.p>
@@ -173,15 +170,15 @@ export default function Historia({
           </p>
         </motion.div>
 
-        {/* Flores decorativas */}
+        {/* Flores decorativas - VIOLETA */}
         <motion.div
           variants={imageVariants}
           className="absolute -bottom-10 left-0 w-32 h-32 opacity-20 pointer-events-none"
         >
           <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
-            <circle cx="30" cy="70" r="20" fill="#f8bbd9" />
-            <circle cx="50" cy="50" r="15" fill="#f48fb1" />
-            <circle cx="70" cy="75" r="18" fill="#fce4ec" />
+            <circle cx="30" cy="70" r="20" fill="#ce93d8" />
+            <circle cx="50" cy="50" r="15" fill="#9575cd" />
+            <circle cx="70" cy="75" r="18" fill="#e1bee7" />
           </svg>
         </motion.div>
         <motion.div
@@ -189,9 +186,9 @@ export default function Historia({
           className="absolute -bottom-10 right-0 w-32 h-32 opacity-20 pointer-events-none scale-x-[-1]"
         >
           <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
-            <circle cx="30" cy="70" r="20" fill="#f8bbd9" />
-            <circle cx="50" cy="50" r="15" fill="#f48fb1" />
-            <circle cx="70" cy="75" r="18" fill="#fce4ec" />
+            <circle cx="30" cy="70" r="20" fill="#ce93d8" />
+            <circle cx="50" cy="50" r="15" fill="#9575cd" />
+            <circle cx="70" cy="75" r="18" fill="#e1bee7" />
           </svg>
         </motion.div>
       </motion.div>

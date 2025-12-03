@@ -61,12 +61,9 @@ export default function DressCode({
 
   return (
     <section className="relative py-20 px-4 overflow-hidden">
-      {/* Fondo */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#fce4ec]/50 via-[#f3e5f5]/60 to-[#fff8e1]/50" />
-
-      {/* Decoraciones */}
-      <div className="absolute top-20 left-0 w-56 h-56 rounded-full bg-[#ce93d8]/15 blur-3xl" />
-      <div className="absolute bottom-20 right-0 w-48 h-48 rounded-full bg-[#d4af37]/10 blur-3xl" />
+      {/* Decoraciones sutiles */}
+      <div className="absolute top-20 left-0 w-56 h-56 rounded-full bg-[#9575cd]/10 blur-3xl" />
+      <div className="absolute bottom-20 right-0 w-48 h-48 rounded-full bg-[#d4af37]/5 blur-3xl" />
 
       <motion.div
         variants={containerVariants}
@@ -82,7 +79,7 @@ export default function DressCode({
             Código de Vestimenta
           </p>
           <h2 className="font-[family-name:var(--font-great-vibes)] text-4xl md:text-5xl 
-                         text-[#4a3728]">
+                         text-[#5e35b1]">
             Dress Code
           </h2>
         </motion.div>
@@ -92,7 +89,7 @@ export default function DressCode({
           variants={itemVariants}
           className="flex justify-center gap-8 md:gap-12 mb-8"
         >
-          {/* Icono vestido */}
+          {/* Icono vestido - VIOLETA */}
           <motion.div
             variants={iconHoverVariants}
             whileHover="hover"
@@ -101,7 +98,7 @@ export default function DressCode({
             <div className="w-20 h-20 md:w-24 md:h-24 rounded-full glass-strong 
                             flex items-center justify-center shadow-lg mb-3">
               <svg
-                className="w-10 h-10 md:w-12 md:h-12 text-[#ec407a]"
+                className="w-10 h-10 md:w-12 md:h-12 text-[#7e57c2]"
                 viewBox="0 0 24 24"
                 fill="currentColor"
               >
@@ -184,11 +181,11 @@ export default function DressCode({
             variants={itemVariants}
             className="flex items-center justify-center gap-2 text-sm"
           >
-            <span className="text-[#ec407a]">❀</span>
-            <p className="font-[family-name:var(--font-cormorant)] text-[#8b7355] italic">
+            <span className="text-[#9575cd]">❀</span>
+            <p className="font-[family-name:var(--font-cormorant)] text-[#7e6b8a] italic">
               Por favor evitar el color {colorEvitar}
             </p>
-            <span className="text-[#ec407a]">❀</span>
+            <span className="text-[#9575cd]">❀</span>
           </motion.div>
         )}
 

@@ -118,12 +118,9 @@ export default function Detalles({
 
   return (
     <section className="relative py-20 px-4 overflow-hidden">
-      {/* Fondo */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#f3e5f5]/40 via-[#fff8e1]/50 to-[#fce4ec]/40" />
-
-      {/* Decoraciones de fondo */}
-      <div className="absolute top-10 right-10 w-48 h-48 rounded-full bg-[#d4af37]/10 blur-3xl" />
-      <div className="absolute bottom-10 left-10 w-64 h-64 rounded-full bg-[#f8bbd9]/15 blur-3xl" />
+      {/* Decoraciones de fondo sutiles */}
+      <div className="absolute top-10 right-10 w-48 h-48 rounded-full bg-[#d4af37]/5 blur-3xl" />
+      <div className="absolute bottom-10 left-10 w-64 h-64 rounded-full bg-[#ce93d8]/10 blur-3xl" />
 
       <motion.div
         variants={containerVariants}
@@ -139,7 +136,7 @@ export default function Detalles({
             Detalles
           </p>
           <h2 className="font-[family-name:var(--font-great-vibes)] text-4xl md:text-5xl 
-                         text-[#4a3728]">
+                         text-[#5e35b1]">
             ¿Cuándo y Dónde?
           </h2>
         </motion.div>
@@ -175,10 +172,10 @@ export default function Detalles({
           whileHover={{ y: -5 }}
           className="glass-strong p-8 text-center"
         >
-          {/* Icono de ubicación */}
+          {/* Icono de ubicación - VIOLETA */}
           <motion.div
             variants={iconVariants}
-            className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-[#ec407a] to-[#f8bbd9] 
+            className="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-[#7e57c2] to-[#9575cd] 
                        flex items-center justify-center mb-4 shadow-lg"
           >
             <svg className="w-9 h-9 text-white" viewBox="0 0 24 24" fill="currentColor">
@@ -201,14 +198,14 @@ export default function Detalles({
             {direccion}
           </p>
 
-          {/* Botón de Google Maps */}
+          {/* Botón de Google Maps - VIOLETA */}
           <motion.a
             href={mapUrl}
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 btn-pink 
+            className="inline-flex items-center gap-2 btn-violet 
                        font-[family-name:var(--font-montserrat)] text-sm"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">

@@ -91,12 +91,9 @@ export default function RSVP({
 
   return (
     <section className="relative py-20 px-4 overflow-hidden">
-      {/* Fondo */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#fff8e1]/50 via-[#fce4ec]/60 to-[#f3e5f5]/50" />
-
-      {/* Decoraciones */}
-      <div className="absolute top-10 right-20 w-48 h-48 rounded-full bg-[#f8bbd9]/20 blur-3xl" />
-      <div className="absolute bottom-20 left-10 w-56 h-56 rounded-full bg-[#d4af37]/10 blur-3xl" />
+      {/* Decoraciones sutiles */}
+      <div className="absolute top-10 right-20 w-48 h-48 rounded-full bg-[#ce93d8]/10 blur-3xl" />
+      <div className="absolute bottom-20 left-10 w-56 h-56 rounded-full bg-[#d4af37]/5 blur-3xl" />
 
       <motion.div
         variants={containerVariants}
@@ -112,10 +109,10 @@ export default function RSVP({
             RSVP
           </p>
           <h2 className="font-[family-name:var(--font-great-vibes)] text-4xl md:text-5xl 
-                         text-[#4a3728] mb-3">
+                         text-[#5e35b1] mb-3">
             {titulo}
           </h2>
-          <p className="font-[family-name:var(--font-cormorant)] text-base text-[#8b7355]">
+          <p className="font-[family-name:var(--font-cormorant)] text-base text-[#7e6b8a]">
             Confirmar antes del {fechaLimite}
           </p>
         </motion.div>
@@ -145,12 +142,12 @@ export default function RSVP({
                   value={nombre}
                   onChange={(e) => setNombre(e.target.value)}
                   placeholder="Tu nombre"
-                  className="w-full px-4 py-3 rounded-xl border-2 border-[#f8bbd9]/50 
+                  className="w-full px-4 py-3 rounded-xl border-2 border-[#ce93d8]/50 
                              bg-white/50 backdrop-blur-sm
-                             font-[family-name:var(--font-cormorant)] text-lg text-[#4a3728]
-                             placeholder:text-[#8b7355]/50
-                             focus:border-[#d4af37] focus:outline-none focus:ring-2 
-                             focus:ring-[#d4af37]/20 transition-all duration-300"
+                             font-[family-name:var(--font-cormorant)] text-lg text-[#4a3750]
+                             placeholder:text-[#7e6b8a]/50
+                             focus:border-[#7e57c2] focus:outline-none focus:ring-2 
+                             focus:ring-[#ce93d8]/20 transition-all duration-300"
                 />
               </div>
 
@@ -168,11 +165,11 @@ export default function RSVP({
                   id="personas"
                   value={personas}
                   onChange={(e) => setPersonas(e.target.value)}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-[#f8bbd9]/50 
+                  className="w-full px-4 py-3 rounded-xl border-2 border-[#ce93d8]/50 
                              bg-white/50 backdrop-blur-sm
-                             font-[family-name:var(--font-cormorant)] text-lg text-[#4a3728]
-                             focus:border-[#d4af37] focus:outline-none focus:ring-2 
-                             focus:ring-[#d4af37]/20 transition-all duration-300
+                             font-[family-name:var(--font-cormorant)] text-lg text-[#4a3750]
+                             focus:border-[#7e57c2] focus:outline-none focus:ring-2 
+                             focus:ring-[#ce93d8]/20 transition-all duration-300
                              cursor-pointer"
                 >
                   {[1, 2, 3, 4, 5].map((num) => (

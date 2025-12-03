@@ -14,6 +14,7 @@ import Galeria from "@/components/Galeria";
 import Agradecimiento from "@/components/Agradecimiento";
 import MusicPlayer from "@/components/MusicPlayer";
 import { FallingPetals } from "@/components/Sparkles";
+import Envelope from "@/components/Envelope";
 
 /**
  * ═══════════════════════════════════════════════════════════════
@@ -68,15 +69,21 @@ const CONFIG = {
 export default function Home() {
   const [showContent, setShowContent] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [envelopeOpened, setEnvelopeOpened] = useState(false);
 
   // Simular carga inicial elegante
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Callback cuando se abre el sobre
+  const handleEnvelopeOpen = () => {
+    setEnvelopeOpened(true);
+  };
 
   // Variantes para la pantalla de carga
   const loadingVariants = {
@@ -139,16 +146,26 @@ export default function Home() {
           </motion.div>
         ) : (
           // ═══════════════════════════════════════════════════════════
-          // CONTENIDO PRINCIPAL
+          // SOBRE INICIAL + CONTENIDO PRINCIPAL
           // ═══════════════════════════════════════════════════════════
-          <motion.div
-            key="content"
-            variants={contentVariants}
-            initial="initial"
-            animate="animate"
-          >
-            {/* Pétalos cayendo (efecto global) */}
-            <FallingPetals count={12} />
+          <>
+            {/* Sobre animado que se abre al tocar */}
+            {!envelopeOpened && (
+              <Envelope 
+                nombre={CONFIG.nombre} 
+                onOpen={handleEnvelopeOpen} 
+              />
+            )}
+
+            {/* Contenido de la invitación (visible después de abrir el sobre) */}
+            <motion.div
+              key="content"
+              variants={contentVariants}
+              initial="initial"
+              animate={envelopeOpened ? "animate" : "initial"}
+            >
+              {/* Pétalos cayendo (efecto global) */}
+              {envelopeOpened && <FallingPetals count={12} />}
 
             {/* ─────────────────────────────────────────────────────────
                 SECCIÓN 1: HERO PRINCIPAL
@@ -204,13 +221,13 @@ export default function Home() {
             />
 
             {/* ─────────────────────────────────────────────────────────
-                SECCIÓN 6: RSVP
+                SECCIÓN 6: RSVP (COMENTADO)
                 Formulario de confirmación
             ───────────────────────────────────────────────────────── */}
-            <RSVP
+            {/* <RSVP
               titulo="Confirma tu Asistencia"
               fechaLimite={CONFIG.fechaLimiteRSVP}
-            />
+            /> */}
 
             {/* ─────────────────────────────────────────────────────────
                 SECCIÓN 7: GALERÍA
@@ -232,11 +249,11 @@ export default function Home() {
 
             {/* ─────────────────────────────────────────────────────────
                 REPRODUCTOR DE MÚSICA
-                Botón flotante para activar/desactivar música
-                * Coloca tu archivo de música en /public/music/background.mp3
+                Se reproduce automáticamente al abrir el sobre
             ───────────────────────────────────────────────────────── */}
-            <MusicPlayer audioSrc="/music/background.mp3" />
-          </motion.div>
+            {envelopeOpened && <MusicPlayer audioSrc="/music/cancion.mp3" autoPlay />}
+            </motion.div>
+          </>
         )}
       </AnimatePresence>
     </main>
