@@ -99,7 +99,6 @@ export default function Countdown({
   const TimeUnit = ({ 
     value, 
     label, 
-    index 
   }: { 
     value: number; 
     label: string;
@@ -110,27 +109,21 @@ export default function Countdown({
       className="flex flex-col items-center"
     >
       {/* Caja con número */}
-      <motion.div
-        className="glass-strong w-16 h-16 md:w-20 md:h-20 flex items-center justify-center
-                   shadow-lg relative"
-        whileHover={{ scale: 1.05 }}
+      <div
+        className="w-16 h-16 md:w-20 md:h-20 flex items-center justify-center
+                   bg-white/60 backdrop-blur-sm rounded-2xl shadow-lg
+                   border border-[#d4af37]/30"
       >
-        {/* Número animado */}
         <span
-          className="font-[family-name:var(--font-cormorant)] text-3xl md:text-4xl 
-                     font-bold text-[#5e35b1]"
+          className="text-3xl md:text-4xl font-bold text-[#5e35b1]"
+          style={{ fontFamily: 'Georgia, serif' }}
         >
           {isClient ? String(value).padStart(2, "0") : "00"}
         </span>
-
-        {/* Decoración dorada */}
-        <div className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r 
-                        from-transparent via-[#d4af37] to-transparent" />
-      </motion.div>
+      </div>
 
       {/* Etiqueta */}
-      <span className="mt-3 font-[family-name:var(--font-montserrat)] text-xs 
-                       uppercase tracking-wider text-[#8b7355]">
+      <span className="mt-3 text-xs uppercase tracking-wider text-[#8b7355]">
         {label}
       </span>
     </motion.div>
